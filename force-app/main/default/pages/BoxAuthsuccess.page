@@ -1,0 +1,6 @@
+<apex:page controller="BoxAuthService_cntllr" action="{!getAccessToken}">
+    
+    {!body}
+    
+
+</apex:page>

@@ -1,0 +1,14 @@
+<apex:page controller="CustomSearchController">
+    
+    <apex:form >
+        <apex:inputText value="{!q}"/>
+        <apex:commandButton value="search" action="{!search}" />
+    </apex:form>
+      <apex:pageBlock >
+          <apex:pageblocktable value="{! account}" var="acc">
+              <apex:column value="{!acc.Id}"/>
+              <apex:column value="{!acc.Name}"/>
+          </apex:pageblocktable>
+    
+    </apex:pageBlock>
+</apex:page>

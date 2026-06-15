@@ -1,0 +1,15 @@
+<template>
+    <lightning-input label="search" placeholder="Type here to search Accounts"
+    value={SearchKey} onchange={handleSearch}></lightning-input>
+
+    <lightning-card title="Search Functionality">
+
+    <lightning-datatable
+    key-field='Id'
+    columns={columns}
+    data={dataTable}>
+
+    </lightning-datatable>
+
+</lightning-card>
+</template>

@@ -1,0 +1,6 @@
+<aura:component implements="force:appHostable" >
+    <aura:attribute name="msg" type="string" />
+	Hello aliens from aura componenet
+    <c:embedLWCinAura onsenddata ="{!c.handleSendData}"/>
+    {!v.msg}
+</aura:component>

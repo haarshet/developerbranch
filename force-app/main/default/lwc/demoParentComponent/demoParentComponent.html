@@ -1,0 +1,10 @@
+<template>
+
+    <lightning-card title="Parent Component">
+        <p>The message from child-{childMsg}</p>
+        <lightning-input label="Name" lwc:ref="userName"></lightning-input>
+        <lightning-button label="Submit" onclick={submitHandler} ></lightning-button>
+        <c-demo-child-component lwc:ref="childcomp" onshowmessage={handleChildMsg}></c-demo-child-component>
+    </lightning-card>
+    
+</template>

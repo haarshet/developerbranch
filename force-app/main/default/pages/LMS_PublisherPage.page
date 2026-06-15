@@ -1,0 +1,24 @@
+<apex:page >
+    
+    <!--This is component created to communicate between two visual force page by using LMS and this publisher componet and 
+    subscriber componenet is LMS_SubscribePage-->
+    
+    This is a visualforce page !!
+    
+    <button onclick="publishMessage()">
+        send data
+    </button>
+    
+    <script>
+    var  acccountMessageChannel = "{!$MessageChannel.AccountDataMessageChannel__c}";
+    
+    function publishMessage(){
+        
+        let m = {
+            recordId: '001xxxxxxx',
+            name : 'Prayer will be answered'
+            }
+        sforce.one.publish(acccountMessageChannel , m);
+    }    
+    </script>
+</apex:page>

@@ -1,0 +1,4 @@
+<apex:page standardController="Account" extensions="Vfp_with_std_cust_cntrl_cls">
+  {! account.Name}
+    {!account.rating}
+</apex:page>

@@ -1,0 +1,11 @@
+<template>
+
+    <!--<c-event-child-component></c-event-child-component>-->
+    <div onreceiveddata = {handlerecivedfromparent} >
+        <span onreceiveddata = {handlerecivedfromparent}>
+            <c-event-child-component onreceiveddata={handlerecivedfromparent}></c-event-child-component>
+        </span>
+    </div>
+    {message}
+   <!--<c-event-child-component onreceiveddata={handledata}></c-event-child-component> Commented for Event Bubbling-->
+</template>

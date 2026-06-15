@@ -1,0 +1,41 @@
+<template>
+    <lightning-card title="BankAccountDetails"  icon-name="utility:copy_to_clipboard">
+        <div class="slds-p-around_medium">
+            <template lwc:if={accountNumber}>
+                <div class="slds-grid slds-wrap slds-m-bottom_small">
+                    <div class="slds-col slds-size_2-of-3">
+                        <strong>AccountNumber:</strong>{accountNumber}
+                    </div>
+                    <div>
+                    <lightning-button-icon icon-name="utility:copy"
+                                            alternative-text="Copy AccountNumber"
+                                            onclick={copyAccountNumber}
+                                            title="Copy AccountNumber">
+                    </lightning-button-icon>
+                    </div>
+                </div>
+            </template>
+            <template lwc:if={ifscCode}>
+                <div class="slds-grid slds-wrap slds-m-bottom_small">
+                    <div class="slds-col slds-size_2-of-3">
+                        <strong>IFSC Code:</strong>{ifscCode}
+                    </div>
+                    <div>
+                    <lightning-button-icon icon-name="utility:copy"
+                                            alternative-text="Copy IFSCCode"
+                                            onclick={copyIfscCode}
+                                            title="IFSCCode">
+                    </lightning-button-icon>
+                    </div>
+                </div>
+            </template>
+            <template lwc:if={copyMessage}>
+                <p class="slds-text-color_success slds-m-top_small">
+                    {copyMessage}</p>
+            </template>
+
+
+        </div>
+    </lightning-card>
+    
+</template>

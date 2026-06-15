@@ -1,0 +1,14 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <!--Step 1 : incude lightning message channel-->
+    
+    This is publisher from Aura Components
+    
+    <lightning:messageChannel type="AccountDataMessageChannel__c"
+                              aura:id = "accountMessageChannel">
+    
+    </lightning:messageChannel>
+    
+    <lightning:button label="Send Data" onclick="{!c.handleSendData}"></lightning:button>
+    
+    
+</aura:component>

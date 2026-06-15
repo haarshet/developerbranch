@@ -1,0 +1,31 @@
+<template>
+    <lightning-card title="HelloWorld" icon-name="custom:custom14">
+      <div class="slds-m-around_medium">
+        <p>Hello, {greeting}!</p>
+        <lightning-input label="Name" value={greeting} onchange={changeHandler}></lightning-input>
+      </div>
+      
+        <div>
+       
+    <lightning-input label="Name" type="text"></lightning-input>
+
+    <lightning-input type="checkbox" label="Subscribe"></lightning-input>
+
+    <lightning-input type="radio" name="gender" label="Male"></lightning-input>
+    <lightning-input type="radio" name="gender" label="Female"></lightning-input>
+
+    <lightning-button label="Submit"></lightning-button>
+
+    <div class="slds-text-body_regular">The quick brown fox jumps over the lazy dog.</div>
+
+        </div>
+
+        <div>
+          
+    <template for:each={contacts} for:item="con">
+        <p key={con.Id}>{con.Name}</p>
+    </template>
+
+          </div>
+    </lightning-card>
+  </template>

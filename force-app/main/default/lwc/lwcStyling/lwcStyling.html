@@ -1,0 +1,37 @@
+<template>
+    <lightning-card title="Inline Styling">
+        <div class="slds-m-around_medium">
+            <div style="color:red; font-size:20px">Hello Welcome to BatMan World!!</div>
+            <div class="badge">Hello Welcome to BatMan World!!</div>
+            <div class="container">
+                    <div>1</div>
+                    <div>2</div>
+
+            </div>
+        </div>
+
+   
+    </lightning-card>
+    <lightning-card title="Dynamic css">
+        <div class="slds-var-m-around_medium">
+            <lightning-input label="Percent" value={percent} onchange={changeHandler}></lightning-input>
+            <div style={percentage} class="slds notify slds-notify_alert slds-theme_alert-texture slds-theme_error" role="alert">
+                Big Bang Theory !!!
+            </div>
+
+        </div>
+    </lightning-card>
+
+    <lightning-card title="hover">
+        <div class="user">Hover On Me!!!</div>
+
+
+        
+        
+    </lightning-card>
+    <lightning-card title="CSS BOX">
+       <p class="box user">Hello Harish</p>
+       <h1>Is it Boring</h1>
+    </lightning-card>
+    
+</template>

@@ -1,0 +1,40 @@
+<template>
+    <lightning-card title="Conditional Rendering">
+        <lightning-button variant="brand"
+        title="ShowData" label="ShowData"
+        onclick={handleClick}></lightning-button>
+
+        <template if:true={isVisible}>
+        <div> Welcome to the DisneyLand</div>
+        </template>
+
+    </lightning-card>
+    <lightning-card title="For:each loop">
+        <div>CAR LIST</div>
+        <template for:each={carList} for:item="car">
+            <div key={car}>{car}</div>
+        </template>
+
+    </lightning-card>
+
+    <lightning-card title="Iterator Car List">
+        <template iterator:cars={carCompany}>
+            <div key={cars.value.Id}>
+            <ul>
+                <template if:true={cars.first}>
+                    <div>This is the first one</div>
+                </template>
+                <li>
+                    <strong>{cars.value.name}</strong>
+                    {cars.value.car}
+                </li>
+                    <template if:true={cars.last}>
+                    <div>This is the last one</div>
+                </template>
+            </ul>
+            </div>
+        </template>
+
+    </lightning-card>
+    
+</template>

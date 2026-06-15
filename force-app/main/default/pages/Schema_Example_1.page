@@ -1,0 +1,12 @@
+<apex:page controller="Schema_Example_1">
+    Hello {!name}
+    <apex:dataTable value="{!objResult}" var="a" cellpadding="10" rules="rows" border="frame" >
+       <apex:column value="{!a}" headervalue="key" />
+       <apex:column value="{!objResult[a]}"  headervalue="value" />
+       
+    </apex:dataTable>
+    <apex:form >
+     <apex:commandButton value="save" action="{!save}"  id="save"/>
+    </apex:form>
+    
+</apex:page>

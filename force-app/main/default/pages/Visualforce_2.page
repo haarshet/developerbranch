@@ -1,0 +1,66 @@
+<apex:page Controller="Visualforce_2_cntllr">
+    
+    <script>
+    window.onload = function(){
+        callApexMethod('Hello salesforce'); 
+    }
+    
+    </script>
+    <apex:outputText id="out" value="{!greeting}"> </apex:outputText>
+    
+    <!--<apex:pageBlock >
+<apex:pageBlockTable value="{! account}" var="acc">
+<apex:column value="{! acc.Name}"/>
+<apex:column value="{!acc.Rating}"/>
+</apex:pageBlockTable>
+</apex:pageBlock>-->
+    
+    <apex:dataTable value="{!account}"  var="acc">
+        <apex:column >
+            <apex:outputText > {!acc.Name}</apex:outputText>
+        </apex:column>
+        
+        <apex:column >
+            <apex:dataList Value="{!acc.Contacts}" var="con">
+                <apex:outputText > {!con.Name}</apex:outputText>
+            </apex:dataList>
+        </apex:column>
+        <apex:column >
+            <apex:dataList Value="{!acc.Contacts}" var="con">
+                <apex:outputText > {!con.Name}</apex:outputText>
+            </apex:dataList>
+        </apex:column>
+    </apex:dataTable>
+    
+    
+    
+    
+    <apex:form >
+        <!-- sosl data display code -->
+        <apex:commandButton value="save" action="{! methodOne}"/> 
+            <apex:dataTable value="{!accounts}"  var="accs">
+        <apex:column >
+            <apex:outputText > {!accs.Name}</apex:outputText>
+        </apex:column>
+                <apex:column >
+            <apex:dataList Value="{!accounts}" var="accs">
+                <apex:outputText > {!accs.Phone}</apex:outputText>
+            </apex:dataList>
+        </apex:column>
+        
+        <apex:column >
+            <apex:dataList Value="{!Contacts}" var="cons">
+                <apex:outputText > {!cons.LastName}</apex:outputText>
+            </apex:dataList>
+        </apex:column>
+
+    </apex:dataTable>
+     <!-- sosl data display code -->
+        
+        <!--<apex:actionFunction action="{!methodOne}" name="callApexMethod" rerender="out" >
+            <apex:param value="" name="messgae" assignTo="{!greeting}"/>
+            
+        </apex:actionFunction>-->
+    </apex:form>
+    <!--<apex:commandButton value= "save" action="{! methodOne}"/>-->
+</apex:page>

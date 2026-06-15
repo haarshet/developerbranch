@@ -1,0 +1,48 @@
+<template>
+
+    <lightning-card title="Quiz">
+        <div class="slds-m-around_medium">
+            <template if:true={isSubmitted}>
+            <div class={isScoredFull}> You scored {correctAnswers} out of {myQuestion.length}</div>
+            </template>
+            <form>
+            <template for:each={myQuestion} for:item="quest">
+                <div key={quest.id} class="slds-m-around_medium">
+                    <div>
+                        <strong>
+                        {quest.id} - {quest.question}
+                        </strong>
+                    </div>
+                     <div class="slds-grid slds-gutters slds-p-around_medium">
+                        <div class="slds-col">
+                            <input type="radio" name={quest.id} value="a" onchange={changeHandler}/>
+                            {quest.answer.a}
+                        </div>
+                        <div class="slds-col">
+                            <input type="radio" name={quest.id} value="b" onchange={changeHandler}/>
+                            {quest.answer.b}
+                        </div>
+                        <div class="slds-col">
+                            <input type="radio" name={quest.id} value="c" onchange={changeHandler}/>
+                            {quest.answer.c}
+                        </div>
+                    </div>
+                </div>
+
+
+            </template>
+            <lightning-button variant="brand" type="submit"
+            label="Submit" class="slds-m-around_small"
+            disabled={allNotSelected}
+            onclick={submitHandler}>
+            </lightning-button>
+            <lightning-button variant="brand" type="reset"
+            label="reset" class="slds-m-around_small"
+            onclick={resetHandler}>
+            </lightning-button>
+            </form>
+        </div>
+
+    </lightning-card>
+    
+</template>

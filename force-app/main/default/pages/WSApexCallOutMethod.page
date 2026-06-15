@@ -1,0 +1,33 @@
+<apex:page >
+    <apex:includeScript value="/soap/ajax/45.0/connection.js" />
+    <apex:includeScript value="/soap/ajax/45.0/apex.js" />
+    
+    <Script type= "text/javascript">
+        window.onload= function(){
+         sforce.connection.sessionId= '{!$Api.session_ID}';
+        
+        try{
+            var accounts = [];
+        	var account = new sforce.SObject("Account"); <!--Try to create account instance and pass account object as a parameter for Sobject -->
+        	account.Name = 'Apex in ajax';
+        
+        	accounts.push(account);
+        	
+        
+        // we need to create a account 
+         	sforce.connection.create(accounts); <!--This method will take array as a parameter dy default so we need to create a array instance to store it -->
+        	sforce.apex.execute("WSApex_Method","exposemethodAsAOAPmethod",{a :accounts }); <!--This will take 3 parameter apexclass,apex method,parameter-->
+        
+        }catch(e){
+        	console.log('Exception'+e);
+        }
+        
+        };
+        
+        
+    </Script>
+    
+    <h1>
+        Salesforce Apex Method callout
+    </h1>
+</apex:page>

@@ -1,0 +1,14 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+	    <!--Step 1 : incude lightning message channel-->
+    <aura:attribute name="receivedMessage"  type="String"></aura:attribute>
+    
+    This is subscribe from Aura Components!!!!
+    
+    <lightning:messageChannel type="AccountDataMessageChannel__c"
+                              onMessage = "{!c.handleMessage}">
+    
+    
+    </lightning:messageChannel>
+    
+    {!v.receivedMessage}
+</aura:component>

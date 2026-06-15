@@ -1,0 +1,45 @@
+<apex:page >
+    <head>
+        <script src="/soap/ajax/45.0/connection.js" type = "text/javascript"> </script>
+        <script>
+            
+            function getRecord(){
+            try{
+                sforce.connection.sessionId = '{!GETSESSIONID()}'
+                var result = sforce.connection.query("SELECT Id,Name, FROM Account");
+                console.log('----' + result);
+                
+                if(result.size >0){                
+                    var recordlist = result.getArray("records");
+                    displayRecords(recordlist)
+                   }
+                
+            }catch(error){
+                fetchFailed(error)
+            }
+            
+        }
+        
+        function displayRecords(recordlist){
+            //var recordlist = result.getArray("records");
+            //system.debug('----'+recordlist);
+            for (var i=0; i < recordlist.length; i++){
+                var record = recordlist[i];
+                
+                document.getElementById('Out').innerHTML += record.Name + '<br/>';
+            }
+        }
+        
+        function fetchFailed(error){
+            document.getElementById('Out').innerHTML = "<font color=red>" + error + "</font>"
+        }        		
+        
+        
+        </script>
+        
+    </head>
+    <body>
+        <input type ="button"  value="Get Record" onclick="getRecord()" class= "btn" />
+        <div id ="Out"></div>
+    </body>
+</apex:page>

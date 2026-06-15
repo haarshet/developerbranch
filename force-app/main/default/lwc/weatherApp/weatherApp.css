@@ -1,0 +1,119 @@
+.app{
+    background: #091f43;
+    min-height: 100vh;
+ 
+   } 
+
+.app-card{
+    background: #ffffff;
+    max-width: 400px;
+    min-width: 375px;
+    border-radius: 8px;
+}
+
+.flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header{
+    color: #091f43;
+    font-size: 24px;
+    padding: 16px;
+    border-bottom: 1px solid #ccc;
+}
+
+.width100{
+    width: 100%;
+}
+
+input{
+    
+    text-align: center;
+    padding: 12px;
+    height: 50px;
+    outline: none;
+    font-size: 24px;
+    border: 2px solid #ccc;
+    border-radius: 1px;
+}
+
+input::placeholder{
+    color: #bfbfbf;
+}
+
+.submit-button{
+        width: 100%;
+    background: #ed2144;
+    height: 45px;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 24px;
+    border-radius: 8px;
+}
+
+.success-msg{
+    color: #155754;
+    background: #d4edda;
+    border: 1px solid #155754;
+    border-radius: 5px;
+    padding: 12px;
+    margin: 12px;
+}
+
+.error-msg{
+    color: #721c24;
+    background: #f8d7da;
+    border: 1px solid #155754;
+    border-radius: 5px;
+    padding: 12px;
+    margin: 12px;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.temperature{
+    font-size: 60px;
+    font-weight: 700;
+    line-height: normal;
+    padding-top: 24px;
+}
+
+.description{
+    font-size: 24px;
+    line-height: 30px;
+    padding-top: 24px;
+}
+
+.location{
+    font-size: 24px;
+    line-height: normal;
+    padding-top: 24px;
+}
+
+footer{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    border-top: 1px solid #ccc;
+    
+}
+
+.feels_like{
+    width:100px;
+    padding:16px;
+    
+}
+.humidity{
+    width:170px;
+    padding:16px;
+     border-left:1px solid #ccc
+}
+
+.weatherimg{
+    max-width: 125px;
+}

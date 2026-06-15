@@ -1,0 +1,29 @@
+<apex:page controller="Youtube_Controller">
+    
+    <apex:form >
+        <apex:inputText value="{!searchQuery}" />
+        <apex:commandButton value="Search" action="{!search}"/>
+    </apex:form>
+    
+    <table>
+        <apex:repeat value="{! datalist}" var="record">
+            
+           <tr>
+               <td>
+                   {!record.title}
+               </td>
+               <td>
+                   {!record.description}
+               </td>
+
+               <td>
+                   {!record.publishtime}
+               </td>
+               <td>
+                   <img src ="{!record.url}" alt ="thumbnail"/>
+               </td>
+            </tr>
+            
+        </apex:repeat>
+    </table>
+</apex:page>

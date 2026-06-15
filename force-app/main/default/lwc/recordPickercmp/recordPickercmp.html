@@ -1,0 +1,19 @@
+<template>
+    <lightning-record-picker label="Account"
+        placeholder = "Search Accounts.."
+        object-api-name = "Account"
+        onchange={handleAccountChange}
+        filter={filter}
+        matching-info={matchingInfo}>
+    
+        
+    </lightning-record-picker>
+
+    <br/><br/>
+
+    <lightning-datatable key-field='Id'
+                         columns={columns}
+                         data={dataTable}>
+                        </lightning-datatable>
+    
+</template>

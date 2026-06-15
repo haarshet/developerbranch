@@ -1,0 +1,20 @@
+<apex:page >
+    <apex:includeLightning />
+    
+    <div id="lightning">
+        
+    </div>
+    
+    <!--In script we are trying to plug exploreLtngOut we need to create omponent with 4 paramerter
+	1. name of the LWC , 2. empty object then 3.place holder and 4.funcion which is call back -->
+    
+    <Script>
+        $Lightning.use("c:exploreLwc", function(){
+        $Lightning.createComponent("c:exploreLtngOut", {} , "lightning" ,function(cmp){console.log('Am heree !!!');
+        });
+        });
+        
+        
+    </Script>
+    
+</apex:page>

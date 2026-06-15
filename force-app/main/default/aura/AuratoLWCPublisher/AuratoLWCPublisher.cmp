@@ -1,0 +1,19 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    
+    <!--This component is used to send the data to AuratoLWCsubscribe LWC component-->
+    
+    <aura:attribute name ="firstName" type="String"></aura:attribute>
+    <aura:attribute name ="lastName" type="String"></aura:attribute>
+    <aura:attribute name ="profession" type="String"></aura:attribute>
+    
+    <lightning:messageChannel type="GeneralInfoMessageChannel__c"
+                              aura:id = "generalInfo">
+    </lightning:messageChannel>
+    
+    <lightning:input label ="FirstName" value="{! v.firstName}"></lightning:input>
+    <lightning:input label ="LastName" value="{! v.lastName}"></lightning:input>
+    <lightning:input label ="Profession" value="{! v.profession}"></lightning:input>
+    
+    <lightning:button label="Send Info" onclick="{!c.handleSendInfo}"></lightning:button>
+    
+</aura:component>

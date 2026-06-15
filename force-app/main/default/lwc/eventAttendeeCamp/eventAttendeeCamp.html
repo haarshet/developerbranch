@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="Event Attendee Management">
+        <lightning-record-picker label="Events"
+        placeholder="SearchEvents"
+        object-api-name="Event_Type__c"
+        onchange={handleChangeEvent}></lightning-record-picker>
+    </lightning-card>
+
+    <lightning-dual-listbox source-label="Available Attendees" 
+                        selected-label="Selected Attendees"
+                        options={availableAttendees}
+                        value={selectedAttendees}
+                        onchange={handleAttendeeChange}></lightning-dual-listbox>
+
+</template>

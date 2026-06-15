@@ -1,0 +1,9 @@
+<apex:page controller="Visualforce_supportcntllr">
+  <apex:form > 
+    <apex:outputPanel id="out">
+        <apex:outputText value="click me {!count}"/>
+        <apex:actionSupport event="onclick" action="{!counterhelper}" rerender="out" status="counterStatus"/>
+        <apex:actionStatus id="counterStatus" startText="Processing...." stopText="Finished"></apex:actionStatus>
+    </apex:outputPanel>
+  </apex:form> 
+</apex:page>

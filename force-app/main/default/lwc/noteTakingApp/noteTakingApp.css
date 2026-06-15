@@ -1,0 +1,78 @@
+:host(){
+    --dark-blue:#022451;
+    --white:#fff;
+}
+.app{    
+    background: var(--dark-blue);
+    min-height: 100vh;
+    font-size: 16px;
+    padding:16px;
+    display:flex;
+    flex-wrap:wrap;
+   
+}
+.box{
+    height: 300px;
+    width: 300px;
+    background: var(--white);
+    border-radius: 12px;
+    margin: 12px;
+}
+
+.box-center{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.dotted-circle{
+    border: 2px solid var(--dark-blue);
+    border-radius: 150%;
+    padding: 14px;
+}
+h2{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.custom-icon{
+    --slds-c-badge-color-background: var(--dark-blue);
+}
+
+header{
+background: #0076d3;
+    color: #fff;
+    padding: 4px 16px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.notes{
+    height: 150px;
+    overflow: auto;
+    padding: 4px 16px;
+}
+
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 4px 8px;
+    box-sizing: border-box;
+}
+
+.footer-right {
+    display: flex;
+    gap: 8px; /* space between icons */
+    align-items: center; 
+}
+
+
+.footer-left {
+    font-size: 14px;
+    color: #333;
+}

@@ -1,0 +1,7 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" >
+	    <lightning:card footer=" HelloCard Footer" title="Hello Aliens">
+        <p class="slds-p-horizontal_small">
+          This is my first Aura Component
+        </p>
+    </lightning:card>
+</aura:component>

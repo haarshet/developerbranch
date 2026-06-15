@@ -1,0 +1,6 @@
+<apex:page controller="BoxAuthwithPKCEFlowcontroller" action="{!authenticate}">
+    
+    <!--VFP Page created to learn PKCE Flow contoller and this vfp is trigger URL for BoxAuthwithPKCEFlowcontroller -->
+    
+    
+</apex:page>

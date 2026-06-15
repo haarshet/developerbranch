@@ -1,0 +1,39 @@
+<apex:page >
+    
+    <!--This is component created to communicate between two visual force page by using LMS and this publisher componet and 
+	subscriber componenet is LMS_SubscribePage-->
+      <button onclick="subscribeMessage()">
+        Subscribe
+     </button>
+    
+     <button onclick="unSubscribeMessage()">
+        Un Subscribe
+     </button>
+    <div class ="processedMsg">
+        
+    </div>
+    
+    <script>
+    let  acccountMessageChannel = "{!$MessageChannel.AccountDataMessageChannel__c}";
+    let subscriptionInfo;
+
+    function subscribeMessage(){
+        if (!subscriptionInfo){
+             subscriptionInfo=sforce.one.subscribe(acccountMessageChannel , handleMessage);
+        }
+    }    
+    
+    function handleMessage(message){
+        var processedMessage = JSON.stringify (message, null, "\t");
+        document.querySelector('.processedMsg').innerHTML = processedMessage;
+    }
+    
+    function unSubscribeMessage(){
+       if (subscriptionInfo){
+       		sforce.one.unsubscribe(subscriptionInfo);
+           subscriptionInfo = null;
+       }
+    }
+    
+    </script>
+</apex:page>

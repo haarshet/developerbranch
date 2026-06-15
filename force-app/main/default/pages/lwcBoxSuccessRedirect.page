@@ -1,0 +1,18 @@
+<apex:page >
+ <script>
+
+    window.onload = onLoad;
+
+    function onLoad(){
+        const code = getUrlParamvalue(window.location.href,'code');
+        location.href='/lightning/n/Box_Auth?c__code='+code;
+
+
+    }
+
+    function getUrlParamvalue(url, key){
+        return new URL(url).searchParams.get(key);
+        console.log('code'+key);
+    }
+ </script>
+</apex:page>
