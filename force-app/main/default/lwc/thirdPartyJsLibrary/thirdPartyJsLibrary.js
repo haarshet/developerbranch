@@ -1,17 +1,25 @@
 import { LightningElement } from 'lwc';
 import MOMENT from '@salesforce/resourceUrl/moment';
-import {loadScript} from 'lightning/platformResourceLoader';
+import ANIMATE from '@salesforce/resourceUrl/animate';
+import {loadScript,loadStyle} from 'lightning/platformResourceLoader';
+
 
 export default class ThirdPartyJsLibrary extends LightningElement {
     currentDate;
+    isLibLoaded = false;
 
     renderedCallback(){
-
-        loadScript(this, MOMENT+'/moment/moment.min.js').then(()=>{
-            this.setDateOnScreen()
-        }).catch(()=>{
-            console.error(error)
+        if(this.isLibLoaded){
+            return;
+        }
+        Promise.all([
+             loadScript(this, MOMENT+'/moment/moment.min.js'),
+            loadStyle(this, ANIMATE+'/animate/animate.min.css')
+        ]).then(()=>{
+            this.setDateOnScreen();
         })
+        this.isLibLoaded=true;
+ 
 
     }
 
