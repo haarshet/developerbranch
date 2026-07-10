@@ -19,7 +19,7 @@ export default class SearchFunctionality extends LightningElement {
         if(data){
             this.dataTable = data;
         }else{
-            console.log('error'+error)
+            console.log('error',error)
         }
     }
 
