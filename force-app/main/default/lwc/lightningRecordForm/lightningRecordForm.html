@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="Create record using lighting-base-form">
+        <lightning-record-form
+        object-api-name={objectName}
+        fields={fieldList}
+        onsuccess={successHandler}>
+        </lightning-record-form>
+    </lightning-card>
+    
+
+        <lightning-card title="Create record using lighting-base-form Edit Mode">
+        <lightning-record-form
+        record-id="001dM00004DLT0hQAH"
+        object-api-name={objectName}
+        fields={fieldList}
+        mode="edit"
+        columns="2"></lightning-record-form>
+        
+    </lightning-card>
+</template>
