@@ -9,7 +9,7 @@
          <lightning-input-field field-name={fields.name}></lightning-input-field>
           <lightning-input-field field-name={fields.phone}></lightning-input-field>
            <lightning-input-field field-name={fields.email}></lightning-input-field>
-        <lightning-button class="slds=m-around_xx-small" label="Cancel"></lightning-button>
+        <lightning-button onclick={handleReset} class="slds=m-around_xx-small" label="Cancel"></lightning-button>
         <lightning-button variant="brand" type="submit" class="slds=m-around_xx-small" label="Save"></lightning-button>
         </lightning-record-edit-form>
     </lightning-card>
